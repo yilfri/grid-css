@@ -60,6 +60,12 @@ img {
 	border: medium solid #999;
 }
 
+.sub-item {
+	padding: 1rem;
+	background-color: #ddd;
+	border: medium solid #ccc;
+}
+
 .grid-explicit {
 	display: grid;
 	/* 3x3 */
@@ -278,4 +284,23 @@ img {
 	/* Podemos generar responsive desing sin necesidad de Media Queries de la siguiente forma */
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+}
+
+.grid-nested {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.subgrid {
+	/* Para que la subgrid funcione es necesario: 
+	1) Definir explícitamente el tamaño que ocupará el elemento que aplicará subgrid dentro del contenedor padre grid, es decir definir sus propiedades grid-column y grid-row;
+	*/
+	grid-column: span 3;
+	grid-row: 1;
 }
